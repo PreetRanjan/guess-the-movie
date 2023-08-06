@@ -1,0 +1,57 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div>
+      <img
+        src="/assets/gtf-logo-2.png"
+        height="20%"
+        width="20%"
+        alt=""
+        srcset=""
+        style="mix-blend-mode: multiply"
+      />
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!--gameSessions-->
+        <div class="row justify-content-center">
+          <div
+            class="normal-card shadow m-2"
+            style="width: 16rem"
+            *ngFor="let sess of gameSessions"
+          >
+            <!-- <img
+          src="https://images.unsplash.com/photo-1690912638275-ab6d936008b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+          class="card-img-top"
+          alt="..."
+        /> -->
+            <div class="card-body">
+              <h5 class="card-title">{{ sess.title }}</h5>
+              <h6>{{ sess.dateCreated | date }}</h6>
+              <h4 class="fw-bold">
+                <i class="bi bi-images"></i> {{ sess.questions.length }} Images
+              </h4>
+              <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+            </div>
+            <div class="card-footer">
+              <div class="d-grid gap-2">
+                <a
+                  [routerLink]="['playground', sess.id]"
+                  class="btn btn-primary"
+                  >Play</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <h5 class="card-title">Movies! Series! Anime!!</h5> -->
+  </div>
+  <div class="card-footer text-white">
+    Last Updated: {{ currentDate | date }}
+  </div>
+</div>
+<!--Spinner: Show when making the HTTP calls-->
